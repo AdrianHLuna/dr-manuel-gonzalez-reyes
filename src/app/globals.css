@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+/*
+ * Paleta real del Dr. Manuel González Reyes (LOGO/PALETA DE COLORES).
+ * Combo único aplicado en vivo — sin mezclar los dos neutros cálidos como
+ * campos grandes, solo como acentos puntuales (§5.1/§5 AGENTS.md).
+ * #314557 primario · #1d2827 casi-negro (texto/footer) · #445a8b acento
+ * (único acento vivo, manda en CTAs) · #222d46 navy secundario (fondos
+ * oscuros) · #988369/#c1b5a5/#d3cbcb/#eae6e1 cálidos, uso mínimo (bordes,
+ * fondos de sección, chips).
+ */
+:root {
+  --primary: #314557;
+  --primary-foreground: #f6f4f1;
+  --accent: #445a8b;
+  --accent-foreground: #ffffff;
+  --secondary: #222d46;
+  --secondary-foreground: #eae6e1;
+  --warm: #988369;
+  --warm-foreground: #ffffff;
+  --background: #fbfaf8;
+  --foreground: #1d2827;
+  --muted: #eae6e1;
+  --muted-foreground: #556070;
+  --border: #d3cbcb;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-warm: var(--warm);
+  --color-warm-foreground: var(--warm-foreground);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --font-heading: var(--font-source-serif), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+}
