@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   Banknote,
@@ -6,7 +7,6 @@ import {
   ShieldCheck,
   Smartphone,
   Hospital,
-  Stethoscope,
   ArrowRight,
   MapPin,
   Phone,
@@ -173,9 +173,9 @@ export default function Home() {
             </Link>
           </div>
           <div className="mt-8 -mx-4 flex gap-5 overflow-x-auto px-4 pb-2">
-            {services.map((service) => (
+            {services.slice(0, 5).map((service) => (
               <article key={service.id} className="w-72 shrink-0 overflow-hidden rounded-2xl border border-border bg-background">
-                <CardImageHeader alt={service.name} aspect="4/3" />
+                <CardImageHeader src={service.image} alt={service.name} aspect="4/3" />
                 <div className="p-5">
                   <h3 className="font-semibold">{service.name}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{service.description}</p>
@@ -189,7 +189,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Enfermedades — filas con medallón de ícono, tratamiento distinto al
+      {/* Enfermedades — filas con miniatura de imagen, tratamiento distinto al
           carrusel de servicios y al grid de síntomas. */}
       <section aria-labelledby="diseases-heading" className="bg-muted/40 px-4 py-20">
         <div className="mx-auto max-w-4xl">
@@ -197,14 +197,20 @@ export default function Home() {
             Enfermedades Oncológicas que Atendemos
           </h2>
           <div className="mt-8 divide-y divide-border rounded-2xl border border-border bg-background">
-            {diseases.map((disease) => (
+            {diseases.slice(0, 5).map((disease) => (
               <Link
                 key={disease.id}
                 href={`/enfermedades/${disease.slug}`}
                 className="flex items-center gap-4 p-5 transition-colors hover:bg-muted/50"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <Stethoscope className="h-5 w-5" aria-hidden="true" />
+                <div className="relative aspect-[16/10] w-28 shrink-0 overflow-hidden rounded-xl bg-muted sm:w-36">
+                  <Image
+                    src={disease.image}
+                    alt={disease.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 112px, 144px"
+                  />
                 </div>
                 <div className="min-w-0 flex-1">
                   <p className="font-semibold">{disease.name}</p>
@@ -225,14 +231,21 @@ export default function Home() {
       {/* Síntomas — grid compacto de chips de alarma. */}
       <section aria-labelledby="symptoms-heading" className="px-4 py-20">
         <div className="mx-auto max-w-5xl">
-          <h2 id="symptoms-heading" className="font-heading text-2xl font-bold">
-            Señales de Alarma a Vigilar
-          </h2>
-          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-            Si presentas alguno de estos síntomas de forma persistente, conviene una valoración oportuna.
-          </p>
+          <div className="flex items-end justify-between gap-4">
+            <div>
+              <h2 id="symptoms-heading" className="font-heading text-2xl font-bold">
+                Señales de Alarma a Vigilar
+              </h2>
+              <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+                Si presentas alguno de estos síntomas de forma persistente, conviene una valoración oportuna.
+              </p>
+            </div>
+            <Link href="/sintomas" className="flex shrink-0 items-center gap-1 text-sm font-medium text-primary">
+              Ver todos <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {symptoms.map((symptom) => (
+            {symptoms.slice(0, 5).map((symptom) => (
               <Link
                 key={symptom.id}
                 href={`/sintomas/${symptom.slug}`}
