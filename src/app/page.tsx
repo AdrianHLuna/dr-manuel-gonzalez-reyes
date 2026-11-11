@@ -82,9 +82,14 @@ export default function Home() {
           </div>
 
           <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-[2rem] bg-secondary-foreground/10">
-            <div className="flex h-full w-full items-center justify-center text-sm text-secondary-foreground/60">
-              Foto de {doctor.title} {doctor.name}
-            </div>
+            <Image
+              src={doctor.photo}
+              alt={`${doctor.title} ${doctor.name} — ${doctor.specialistTitle}`}
+              fill
+              preload
+              className="object-cover object-top"
+              sizes="(max-width: 768px) 100vw, 384px"
+            />
           </div>
         </div>
       </section>
@@ -116,10 +121,14 @@ export default function Home() {
       {/* Sobre el doctor */}
       <section aria-labelledby="about-heading" className="mx-auto max-w-5xl px-4 py-20">
         <div className="grid gap-10 md:grid-cols-[1fr_1.4fr] md:items-start">
-          <div className="mx-auto aspect-[3/4] w-full max-w-xs overflow-hidden rounded-2xl bg-muted md:mx-0">
-            <div className="flex h-full w-full items-center justify-center text-sm text-muted-foreground">
-              Foto de {doctor.title} {doctor.name}
-            </div>
+          <div className="relative mx-auto aspect-[3/4] w-full max-w-xs overflow-hidden rounded-2xl bg-muted md:mx-0">
+            <Image
+              src="/images/aboutme.jpeg"
+              alt={`${doctor.title} ${doctor.name} en consulta`}
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 768px) 100vw, 320px"
+            />
           </div>
           <div>
             <h2 id="about-heading" className="font-heading text-2xl font-bold">
@@ -249,9 +258,18 @@ export default function Home() {
               <Link
                 key={symptom.id}
                 href={`/sintomas/${symptom.slug}`}
-                className="rounded-xl border border-border bg-background px-4 py-3 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
+                className="flex items-center gap-3 rounded-xl border border-border bg-background p-2.5 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
               >
-                {symptom.name}
+                <div className="relative aspect-[16/10] w-20 shrink-0 overflow-hidden rounded-lg bg-muted">
+                  <Image
+                    src={symptom.image}
+                    alt={symptom.name}
+                    fill
+                    className="object-cover"
+                    sizes="80px"
+                  />
+                </div>
+                <span className="min-w-0 flex-1 leading-snug">{symptom.name}</span>
               </Link>
             ))}
           </div>

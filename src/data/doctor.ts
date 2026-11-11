@@ -74,7 +74,7 @@ export const doctor: DoctorProfile = {
   schedule: "Lunes, miércoles y viernes de 17:00 a 20:00 horas",
   openingHours: ["Mo,We,Fr 17:00-20:00"],
   acceptingNewPatients: true,
-  photo: "/doctor-placeholder.jpg",
+  photo: "/images/hero.jpeg",
   bio: "El Dr. Manuel González Reyes es cirujano general con subespecialidad en Cirugía Oncológica de Adultos y alta especialidad en Cirugía de Cabeza, Cuello y Piel. Con más de 11 años de experiencia y más de 10,000 procedimientos realizados, atiende en tres sedes hospitalarias en la Ciudad de México y el Estado de México: Hospital San Ángel Inn Universidad, Hospital Star Médica Lunaparc y Hospital Ángeles Roma. Su práctica abarca el diagnóstico y tratamiento quirúrgico de cáncer gastrointestinal, mamario, de cabeza y cuello, y de piel, con un enfoque en cirugía mínimamente invasiva cuando es clínicamente apropiado.",
   philosophy:
     "Un diagnóstico oncológico preciso y una cirugía bien planeada empiezan por escuchar al paciente y explicarle cada paso con claridad, sin tecnicismos que generen más incertidumbre.",
