@@ -22,7 +22,7 @@ export const doctor: DoctorProfile = {
   cedulaSubespecialidadInstitucion: "UNAM",
   // Sin folio COFEPRIS confirmado todavía — se deja vacío (formatCredentials
   // muestra "En trámite" automáticamente, nunca se omite el segmento).
-  cofepris: "2628022002A00155",
+  cofepris: "2309142002A00001",
   phone: "+525555489462",
   whatsapp: "+525537630950",
   // Línea de urgencias real, distinta del teléfono de citas.
