@@ -24,7 +24,7 @@ export const doctor: DoctorProfile = {
   // muestra "En trámite" automáticamente, nunca se omite el segmento).
   cofepris: "",
   phone: "+525555489462",
-  whatsapp: "+525555489462",
+  whatsapp: "+525537630950",
   // Línea de urgencias real, distinta del teléfono de citas.
   emergencyPhone: "+525537630950",
   email: "drglezreyesm@gmail.com",
@@ -92,6 +92,7 @@ export const doctor: DoctorProfile = {
     { degree: "Médico Cirujano y Partero", institution: "Universidad de Colima" },
     { degree: "Especialidad en Cirugía General", institution: "Universidad de Guadalajara" },
     { degree: "Subespecialidad en Cirugía Oncológica Adultos", institution: "Universidad Nacional Autónoma de México" },
+    { degree: "Cirugía de Alta Especialidad en Cabeza, Cuello y Piel", institution: "UNAM / IMSS Siglo XXI" },
   ],
   sameAs: [
     "https://www.facebook.com/drmanuelglez",
